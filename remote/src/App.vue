@@ -6,12 +6,12 @@ import Counter from "./components/Counter.vue";
   <div
     style="
       background: #1f2124;
-      boxshadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      borderradius: 5px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
       margin: 20px 20px 20px 20px;
       width: 250px;
       padding: 20px;
-      textalign: center;
+      text-align: center;
       color: white;
       float: left;
     "
@@ -34,7 +34,7 @@ import Counter from "./components/Counter.vue";
         />
       </svg>
     </div>
-    <div style="margintop: 10px; fontsize: 25px">I'm the remote app</div>
+    <div style="margin-top: 10px; font-size: 25px">I'm the remote app</div>
     <Counter />
   </div>
 </template>
