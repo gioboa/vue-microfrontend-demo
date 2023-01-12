@@ -19,7 +19,7 @@ export default defineConfig(async ({ command }) => ({
         outputPath: "dist",
         tsConfig: "tsconfig.json",
         federationConfig: "module-federation/federation.config.cjs",
-        verbose: false,
+        verbose: true,
         dev: command === "serve",
       },
       adapter: createEsBuildAdapter({ plugins: [pluginVue()] }),

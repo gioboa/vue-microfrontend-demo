@@ -1,5 +1,5 @@
 {
-  "name": "vite-vue-microfrontends",
+  "name": "vue-vite-microfrontend",
   "version": "1.0.0",
   "description": "Vite + Module Federation is now possible",
   "main": "index.js",
