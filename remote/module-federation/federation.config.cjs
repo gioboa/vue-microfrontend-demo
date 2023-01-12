@@ -9,11 +9,11 @@ module.exports = withNativeFederation({
     "./remote-app": "./src/App.vue",
   },
   shared: {
-    // ...shareAll({
-    //   singleton: true,
-    //   strictVersion: true,
-    //   requiredVersion: "auto",
-    //   includeSecondaries: false,
-    // }),
+    ...shareAll({
+      singleton: true,
+      strictVersion: true,
+      requiredVersion: "auto",
+      includeSecondaries: false,
+    }),
   },
 });
