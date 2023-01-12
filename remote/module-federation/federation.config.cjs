@@ -5,13 +5,15 @@ const {
 
 module.exports = withNativeFederation({
   name: "remote",
-  shared: {
-    ...shareAll({
-      singleton: true,
-      strictVersion: true,
-      requiredVersion: "auto",
-      includeSecondaries: false,
-    }),
+  exposes: {
+    "./remote-app": "./src/App.vue",
   },
-
+  shared: {
+    // ...shareAll({
+    //   singleton: true,
+    //   strictVersion: true,
+    //   requiredVersion: "auto",
+    //   includeSecondaries: false,
+    // }),
+  },
 });

@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 4173",
     "build": "run-p type-check build-only",
-    "preview": "vite preview",
+    "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
@@ -14,7 +14,9 @@
     "vue": "^3.2.45"
   },
   "devDependencies": {
+    "@module-federation/vite": "^0.2.6",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@softarc/native-federation-esbuild": "^1.1.0",
     "@types/node": "^18.11.12",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",

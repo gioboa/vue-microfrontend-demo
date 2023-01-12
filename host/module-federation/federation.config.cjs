@@ -6,12 +6,11 @@ const {
 module.exports = withNativeFederation({
   name: "host",
   shared: {
-    ...shareAll({
-      singleton: true,
-      strictVersion: true,
-      requiredVersion: "auto",
-      includeSecondaries: false,
-    }),
+    // ...shareAll({
+    //   singleton: true,
+    //   strictVersion: true,
+    //   requiredVersion: "auto",
+    //   includeSecondaries: false,
+    // }),
   },
-
 });

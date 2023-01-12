@@ -1,4 +1,9 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import { initFederation } from "@softarc/native-federation";
 
-createApp(App).mount("#app");
+(async () => {
+  await initFederation({
+    remote: "http://localhost:4174/remoteEntry.json",
+  });
+
+  await import("./bootstrap");
+})();
