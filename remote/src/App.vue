@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import Counter from "./components/Counter.vue";
-import { state } from "shared";
-console.log("remote got message:", state.message);
 </script>
 
 <template>

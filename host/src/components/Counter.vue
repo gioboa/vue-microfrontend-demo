@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { store } from "../store";
+import { useGlobalStore } from "../stores/global";
+
+const store = useGlobalStore();
 </script>
 
 <template>
-  <button class="counter" @click="store.count++">
+  <button class="counter" @click="store.increment()">
     Host counter: {{ store.count }}
   </button>
 </template>
