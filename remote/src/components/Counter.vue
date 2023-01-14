@@ -18,7 +18,7 @@ const { count } = storeToRefs(store);
     "
     @click="store.increment"
   >
-    > Remote counter: {{ count }}
+    Remote counter: {{ count }}
   </button>
 </template>
 
