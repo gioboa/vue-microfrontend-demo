@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { store } from "../store";
+import { storeToRefs } from "pinia";
+import { useStore } from "../stores/counter";
+const store = useStore();
+const { count } = storeToRefs(store);
 </script>
 
 <template>
-  <button class="counter" @click="store.count++">
-    Host counter: {{ store.count }}
+  <button class="counter" @click="store.increment">
+    Host counter: {{ count }}
   </button>
 </template>
 
