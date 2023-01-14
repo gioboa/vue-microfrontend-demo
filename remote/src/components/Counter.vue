@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { store } from "../store";
+import { storeToRefs } from "pinia";
+import { useStore } from "../stores/counter";
+const store = useStore();
+const { count } = storeToRefs(store);
 </script>
 
 <template>
@@ -13,9 +16,9 @@ import { store } from "../store";
       padding: 0.5rem 1rem 0.5rem 1rem;
       color: rgb(24, 24, 24);
     "
-    @click="store.count++"
+    @click="store.increment"
   >
-    Remote counter: {{ store.count }}
+    Remote counter: {{ count }}
   </button>
 </template>
 
