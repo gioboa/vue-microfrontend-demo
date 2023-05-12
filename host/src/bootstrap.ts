@@ -1,11 +1,15 @@
-import { createPinia } from "pinia";
-import { state } from "shared";
-import { createApp } from "vue";
+import VCA, { h } from "@vue/composition-api";
+import Vue from "vue";
 import App from "./App.vue";
-import "./stores/counter";
 
-state.message = "Hello from host!";
+init();
 
-const app = createApp(App);
-app.use(createPinia());
-app.mount("#app");
+function init() {
+  Vue.use(VCA);
+
+  const app = new Vue({
+    render: () => h(App),
+  });
+
+  app.$mount("#app");
+}

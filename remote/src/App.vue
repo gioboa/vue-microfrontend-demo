@@ -1,9 +1,10 @@
-<script setup lang="ts">
-import { state } from "shared";
+<script lang="ts">
+import { defineComponent } from "@vue/composition-api";
 import Counter from "./components/Counter.vue";
-import enviroment from "./enviroment";
-console.log("remote got message:", state.message);
-console.info("vite import.meta got message:", enviroment.VITE_EXAMPLE);
+
+export default defineComponent({
+  components: { Counter },
+});
 </script>
 
 <template>
@@ -42,5 +43,3 @@ console.info("vite import.meta got message:", enviroment.VITE_EXAMPLE);
     <Counter />
   </div>
 </template>
-
-<style scoped />

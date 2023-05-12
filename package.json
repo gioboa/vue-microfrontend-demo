@@ -4,15 +4,16 @@
   "description": "Vite + Module Federation is now possible",
   "main": "index.js",
   "scripts": {
-    "install:deps": "npm install && npm --prefix ./host install && npm --prefix ./remote install",
-    "postinstall:deps": "npm --prefix ./host run build && npm --prefix ./remote run build",
-    "serve:host": "npm --prefix ./host run dev",
-    "serve:remote": "npm --prefix ./remote run dev",
+    "install:deps": "npm --prefix ./host install && npm --prefix ./remote install",
+    "dev:host": "npm --prefix ./host run dev",
+    "dev:remote": "npm --prefix ./remote run dev",
+    "dev": "run-p dev:*",
     "build:host": "npm --prefix ./host run build",
     "build:remote": "npm --prefix ./remote run build",
+    "build": "run-p build:*",
     "preview:host": "npm --prefix ./host run build && npm --prefix ./host run preview",
     "preview:remote": "npm --prefix ./remote run build && npm --prefix ./remote run preview",
-    "prepare": "husky install"
+    "preview": "run-p preview:*"
   },
   "author": {
     "name": "Giorgio Boa",
@@ -23,5 +24,8 @@
   "devDependencies": {
     "husky": "^8.0.0",
     "prettier": "^2.8.2"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

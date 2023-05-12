@@ -1,7 +1,15 @@
-import { createPinia } from "pinia";
-import { createApp } from "vue";
+import VCA, { h } from "@vue/composition-api";
+import Vue from "vue";
 import App from "./App.vue";
 
-const app = createApp(App);
-app.use(createPinia());
-app.mount("#app");
+init();
+
+function init() {
+  Vue.use(VCA);
+
+  const app = new Vue({
+    render: () => h(App),
+  });
+
+  app.$mount("#app");
+}

@@ -1,9 +1,8 @@
 import { federation } from "@module-federation/vite";
 import { createEsBuildAdapter } from "@softarc/native-federation-esbuild";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 import { defineConfig } from "vite";
+import { createVuePlugin } from "vite-plugin-vue2";
 
 export default defineConfig(async ({ command }) => ({
   server: {
@@ -17,7 +16,7 @@ export default defineConfig(async ({ command }) => ({
           alias: {
             vue: path.resolve(
               __dirname,
-              "./node_modules/vue/dist/vue.runtime.esm-bundler.js"
+              "./node_modules/vue/dist/vue.runtime.esm.js"
             ),
             pinia: path.resolve(
               __dirname,
@@ -39,7 +38,6 @@ export default defineConfig(async ({ command }) => ({
       },
       adapter: createEsBuildAdapter({ plugins: [] }),
     }),
-    vue(),
-    vueJsx(),
+    createVuePlugin(),
   ],
 }));

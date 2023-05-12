@@ -1,14 +1,17 @@
-<script setup lang="ts">
-import { storeToRefs } from "pinia";
-import { useStore } from "../stores/counter";
-const store = useStore();
-const { count } = storeToRefs(store);
+<script lang="ts">
+import { defineComponent } from "@vue/composition-api";
+
+export default defineComponent({
+  data: () => {
+    return {
+      count: 0,
+    };
+  },
+});
 </script>
 
 <template>
-  <button class="counter" @click="store.increment">
-    Host counter: {{ count }}
-  </button>
+  <button class="counter" @click="count++">Host counter: {{ count }}</button>
 </template>
 
 <style scoped>
