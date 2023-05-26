@@ -1,10 +1,10 @@
 import { federation } from "@module-federation/vite";
-import { createEsBuildAdapter } from "@softarc/native-federation-esbuild";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import pluginVue from "esbuild-plugin-vue-next";
 import { writeFileSync } from "fs";
+import path from "path";
 import { defineConfig, loadEnv } from "vite";
+import { esBuildAdapter } from "./module-federation/esBuildAdapter";
 
 export default defineConfig(async ({ command, mode }) => {
   const selfEnv = loadEnv(mode, process.cwd());
@@ -34,10 +34,15 @@ export default defineConfig(async ({ command, mode }) => {
           verbose: true,
           dev: command === "serve",
         },
-        adapter: createEsBuildAdapter({ plugins: [pluginVue()] }),
+        adapter: esBuildAdapter,
       }),
       vue(),
       vueJsx(),
     ],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
+    },
   };
 });

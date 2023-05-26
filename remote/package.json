@@ -13,6 +13,7 @@
     "force-vite-restart": "node ../shared/forceViteRestart.js"
   },
   "dependencies": {
+    "esbuild-plugin-inline-image": "^0.0.9",
     "pinia": "^2.0.28",
     "vue": "^3.2.45"
   },
