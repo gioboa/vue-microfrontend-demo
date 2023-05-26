@@ -10,6 +10,7 @@ export default defineConfig(async ({ command }) => ({
     fs: {
       allow: [".", "../shared"],
     },
+    proxy: { "/src/remote_assets": "http://localhost:4174/" },
   },
   resolve:
     command === "serve"
