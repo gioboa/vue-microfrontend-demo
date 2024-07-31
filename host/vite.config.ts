@@ -1,9 +1,9 @@
-import { federation } from "@module-federation/vite";
-import { createEsBuildAdapter } from "@softarc/native-federation-esbuild";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import federation from "module-federation-vite";
 import path from "path";
 import { defineConfig } from "vite";
+import mfConfig from "./module-federation/federation.config.cjs";
 
 export default defineConfig(async ({ command }) => ({
   server: {
@@ -29,17 +29,8 @@ export default defineConfig(async ({ command }) => ({
         }
       : {},
   plugins: [
-    await federation({
-      options: {
-        workspaceRoot: __dirname,
-        outputPath: "dist",
-        tsConfig: "tsconfig.json",
-        federationConfig: "module-federation/federation.config.cjs",
-        verbose: false,
-        dev: command === "serve",
-      },
-      adapter: createEsBuildAdapter({ plugins: [] }),
-    }),
+    
+    await federation(mfConfig),
     vue(),
     vueJsx(),
   ],

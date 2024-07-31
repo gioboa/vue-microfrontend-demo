@@ -4,9 +4,10 @@ const {
 } = require("@softarc/native-federation/build");
 
 module.exports = withNativeFederation({
+  filename: "remoteEntry.js",
   name: "remote",
   exposes: {
-    "./remote-app": "./src/App.vue",
+    "remote-app": "./src/App.vue",
   },
   shared: {
     ...shareAll({

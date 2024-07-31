@@ -3,8 +3,15 @@ const {
   shareAll,
 } = require("@softarc/native-federation/build");
 
-module.exports = withNativeFederation({
+module.exports = {
   name: "host",
+  remotes: {
+    remote: {
+      name: "remote",
+      entry: "http://localhost:4174/remoteEntry.js",
+      type: "module",
+    },
+  },
   shared: {
     ...shareAll({
       singleton: true,
@@ -13,4 +20,4 @@ module.exports = withNativeFederation({
       includeSecondaries: false,
     }),
   },
-});
+};
