@@ -1,10 +1,9 @@
 <script setup lang="ts">
+// @ts-ignore
 import D from "remote/remote-app";
 import { defineAsyncComponent } from "vue";
 import Counter from "./components/Counter.vue";
-const RemoteComponent: any = defineAsyncComponent(async () =>
-D
-);
+const RemoteComponent: any = defineAsyncComponent(async () => D);
 </script>
 
 <template>

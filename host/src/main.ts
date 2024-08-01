@@ -1,4 +1,3 @@
+import("./bootstrap");
+export { };
 
-(async () => {
-  await import("./bootstrap");
-})();

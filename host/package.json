@@ -19,6 +19,7 @@
   "devDependencies": {
     "@module-federation/vite": "^0.2.6",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@softarc/native-federation": "^2.0.9",
     "@softarc/native-federation-esbuild": "^1.1.0",
     "@types/node": "^18.11.12",
     "@vitejs/plugin-vue": "^4.0.0",

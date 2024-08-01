@@ -40,5 +40,17 @@ export default defineConfig(async ({ command, mode }) => {
         shared: path.resolve(__dirname, "../shared/shared"),
       },
     },
+    build: {
+      target: "chrome89",
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.indexOf("/@module-federation/runtime") > -1) {
+              return "mfruntime";
+            }
+          },
+        },
+      },
+    },
   };
 });

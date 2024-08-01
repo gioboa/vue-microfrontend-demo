@@ -5,3 +5,6 @@
 
   await import("./bootstrap");
 })();
+
+export { };
+
