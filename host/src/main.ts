@@ -1,12 +1,12 @@
 import { createPinia } from "pinia";
 import { state } from "shared";
 import { createApp } from "vue";
+// window.useStore 
 import "./stores/counter";
+import App from "./App.vue";
 
 state.message = "Hello from host!";
 
-import("./App.vue").then((App) => {
-  const app = createApp(App.default);
-  app.use(createPinia());
-  app.mount("#app");
-});
+const app = createApp(App);
+app.use(createPinia());
+app.mount("#app");
