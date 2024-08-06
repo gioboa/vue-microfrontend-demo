@@ -18,6 +18,9 @@ importers:
         specifier: ^3.2.45
         version: 3.4.35(typescript@4.7.4)
     devDependencies:
+      '@module-federation/vite':
+        specifier: next
+        version: 1.0.0-alpha-54ad191(rollup@4.19.1)
       '@rushstack/eslint-patch':
         specifier: ^1.1.4
         version: 1.10.4
@@ -48,9 +51,6 @@ importers:
       eslint-plugin-vue:
         specifier: ^9.3.0
         version: 9.27.0(eslint@8.57.0)
-      module-federation-vite:
-        specifier: 1.0.9
-        version: 1.0.9(rollup@4.19.1)
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -390,6 +390,9 @@ packages:
 
   '@module-federation/sdk@0.2.8':
     resolution: {integrity: sha512-eGMnJxdRDgt6dtMv8gkAlzEbTPWVHb3AHUNUG0w56wcbIF0RHC6kmvpHpSQyq4DVGWv3U4g/ZiH5BvBlqEelDQ==}
+
+  '@module-federation/vite@1.0.0-alpha-54ad191':
+    resolution: {integrity: sha512-Yg4kMODN9MS4UY+X4GPZ8e/5XTi4zsAEI1ncwqoILTuqj3H93uN6csNv7ICLrkE0FvMn3hJ4P5NfvK+SB1fZqQ==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1306,9 +1309,6 @@ packages:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  module-federation-vite@1.0.9:
-    resolution: {integrity: sha512-Dxe2RZ2sYrF7AxnPv89CJvv4WImrdcWo9oiqCi18PREA+A8exF/R0mcVLUPKHqSAcFZv+gF1fYlFNefnRJRyVQ==}
-
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
@@ -1407,6 +1407,9 @@ packages:
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
+
+  pathe@1.1.2:
+    resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
 
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
@@ -2097,6 +2100,17 @@ snapshots:
       '@module-federation/sdk': 0.2.8
 
   '@module-federation/sdk@0.2.8': {}
+
+  '@module-federation/vite@1.0.0-alpha-54ad191(rollup@4.19.1)':
+    dependencies:
+      '@module-federation/runtime': 0.2.8
+      '@rollup/pluginutils': 5.1.0(rollup@4.19.1)
+      an-empty-js-file: 1.0.0
+      estree-walker: 2.0.2
+      magic-string: 0.30.11
+      pathe: 1.1.2
+    transitivePeerDependencies:
+      - rollup
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -3134,16 +3148,6 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  module-federation-vite@1.0.9(rollup@4.19.1):
-    dependencies:
-      '@module-federation/runtime': 0.2.8
-      '@rollup/pluginutils': 5.1.0(rollup@4.19.1)
-      an-empty-js-file: 1.0.0
-      estree-walker: 2.0.2
-      magic-string: 0.30.11
-    transitivePeerDependencies:
-      - rollup
-
   ms@2.1.2: {}
 
   muggle-string@0.3.1: {}
@@ -3239,6 +3243,8 @@ snapshots:
       pify: 3.0.0
 
   path-type@4.0.0: {}
+
+  pathe@1.1.2: {}
 
   picocolors@1.0.1: {}
 

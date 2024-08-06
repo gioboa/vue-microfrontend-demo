@@ -1,7 +1,7 @@
+import { federation } from "@module-federation/vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { writeFileSync } from "fs";
-import { federation } from "module-federation-vite";
 import path from "path";
 import { defineConfig, loadEnv } from "vite";
 
@@ -29,7 +29,7 @@ export default defineConfig(async ({ command, mode }) => {
         filename: "remoteEntry.js",
         name: "remote",
         exposes: {
-          "remote-app": "./src/App.vue",
+          "./remote-app": "./src/App.vue",
         },
         remotes: {},
       }),
