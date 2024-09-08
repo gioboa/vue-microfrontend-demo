@@ -15,7 +15,7 @@ export default defineConfig(async ({ command }) => ({
     alias: {
       vue: path.resolve(
         __dirname,
-        "./node_modules/vue/dist/vue.runtime.esm-bundler.js"
+        "./node_modules/vue/dist/vue.runtime.esm-bundler.js",
       ),
       pinia: path.resolve(__dirname, "./node_modules/pinia/dist/pinia.mjs"),
       shared: path.resolve(__dirname, "../shared/shared"),
@@ -30,8 +30,10 @@ export default defineConfig(async ({ command }) => ({
       remotes: {
         remote: {
           type: "module",
+          name: "remote",
           entry: "http://localhost:4174/remoteEntry.js",
           entryGlobalName: "remote",
+          shareScope: "default",
         },
       },
       exposes: {},
