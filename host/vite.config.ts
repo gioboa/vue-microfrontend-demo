@@ -1,5 +1,4 @@
 import { federation } from "@module-federation/vite";
-import { createEsBuildAdapter } from "@softarc/native-federation-esbuild";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
@@ -12,33 +11,31 @@ export default defineConfig(async ({ command }) => ({
     },
     proxy: { "/src/remote_assets": "http://localhost:4174/" },
   },
-  resolve:
-    command === "serve"
-      ? {
-          alias: {
-            vue: path.resolve(
-              __dirname,
-              "./node_modules/vue/dist/vue.runtime.esm-bundler.js"
-            ),
-            pinia: path.resolve(
-              __dirname,
-              "./node_modules/pinia/dist/pinia.mjs"
-            ),
-            shared: path.resolve(__dirname, "../shared/shared"),
-          },
-        }
-      : {},
+  resolve: {
+    alias: {
+      vue: path.resolve(
+        __dirname,
+        "./node_modules/vue/dist/vue.runtime.esm-bundler.js"
+      ),
+      pinia: path.resolve(__dirname, "./node_modules/pinia/dist/pinia.mjs"),
+      shared: path.resolve(__dirname, "../shared/shared"),
+    },
+  },
+  build: {
+    target: "chrome89",
+  },
   plugins: [
     await federation({
-      options: {
-        workspaceRoot: __dirname,
-        outputPath: "dist",
-        tsConfig: "tsconfig.json",
-        federationConfig: "module-federation/federation.config.cjs",
-        verbose: false,
-        dev: command === "serve",
+      name: "host",
+      remotes: {
+        remote: {
+          type: "module",
+          entry: "http://localhost:4174/remoteEntry.js",
+          entryGlobalName: "remote",
+        },
       },
-      adapter: createEsBuildAdapter({ plugins: [] }),
+      exposes: {},
+      filename: "dd/remoteEntry.js",
     }),
     vue(),
     vueJsx(),

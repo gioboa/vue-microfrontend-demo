@@ -1,9 +1,12 @@
-import { initFederation } from "@softarc/native-federation";
+import { createPinia } from "pinia";
+import { state } from "shared";
+import { createApp } from "vue";
+// window.useStore 
+import "./stores/counter";
+import App from "./App.vue";
 
-(async () => {
-  await initFederation({
-    remote: "http://localhost:4174/remoteEntry.json",
-  });
+state.message = "Hello from host!";
 
-  await import("./bootstrap");
-})();
+const app = createApp(App);
+app.use(createPinia());
+app.mount("#app");

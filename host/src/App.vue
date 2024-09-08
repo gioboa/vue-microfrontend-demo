@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { loadRemoteModule } from "@softarc/native-federation";
 import { defineAsyncComponent } from "vue";
 import Counter from "./components/Counter.vue";
-
-const RemoteComponent: any = defineAsyncComponent(() =>
-  loadRemoteModule("remote", "./remote-app")
+const RemoteComponent: any = defineAsyncComponent(
+  // @ts-ignore
+  () => import("remote/remote-app")
 );
 </script>
 

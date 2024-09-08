@@ -4,7 +4,7 @@
   "description": "Vite + Module Federation is now possible",
   "main": "index.js",
   "scripts": {
-    "install:deps": "npm install && npm --prefix ./host install && npm --prefix ./remote install",
+    "install:deps": "npm install && npm --prefix ./host install --force && npm --prefix ./remote install --force",
     "postinstall:deps": "npm --prefix ./host run build && npm --prefix ./remote run build",
     "serve:host": "npm --prefix ./host run dev",
     "serve:remote": "npm --prefix ./remote run dev",
