@@ -25,7 +25,7 @@ export default defineConfig(async ({ command }) => ({
     target: "chrome89",
   },
   plugins: [
-    await federation({
+    federation({
       name: "host",
       remotes: {
         remote: {
@@ -37,7 +37,7 @@ export default defineConfig(async ({ command }) => ({
         },
       },
       exposes: {},
-      filename: "dd/remoteEntry.js",
+      filename: "remoteEntry.js",
     }),
     vue(),
     vueJsx(),
