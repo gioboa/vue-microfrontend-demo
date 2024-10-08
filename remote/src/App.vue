@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { state } from "shared";
 import Counter from "./components/Counter.vue";
+import DropDown from "./components/DropDown.vue";
 import enviroment from "./enviroment";
 import image from "./remote_assets/logo.svg";
 console.log("remote got message:", state.message);
@@ -27,6 +28,8 @@ console.info("vite import.meta got message:", enviroment.VITE_EXAMPLE);
     </div>
     <div style="margin-top: 10px; font-size: 25px">I'm the remote app</div>
     <Counter />
+    <hr />
+    <DropDown />
   </div>
 </template>
 

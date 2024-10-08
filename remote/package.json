@@ -15,6 +15,7 @@
   "dependencies": {
     "esbuild-plugin-inline-image": "^0.0.9",
     "pinia": "^2.0.28",
+    "radix-vue": "^1.9.7",
     "vue": "^3.2.45"
   },
   "devDependencies": {
