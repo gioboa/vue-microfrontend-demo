@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {
-  DropdownMenuRoot,
-  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuPortal,
+  DropdownMenuRoot,
+  DropdownMenuTrigger,
 } from "radix-vue";
 
 const handleClick = () => {

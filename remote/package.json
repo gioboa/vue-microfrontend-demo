@@ -13,10 +13,12 @@
     "force-vite-restart": "node ../shared/forceViteRestart.js"
   },
   "dependencies": {
+    "@floating-ui/vue": "^1.1.5",
     "esbuild-plugin-inline-image": "^0.0.9",
     "pinia": "^2.0.28",
     "radix-vue": "^1.9.7",
-    "vue": "^3.2.45"
+    "vue": "3.5",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@module-federation/vite": "1.1.1",
