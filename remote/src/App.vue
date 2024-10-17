@@ -9,20 +9,7 @@ console.info("vite import.meta got message:", enviroment.VITE_EXAMPLE);
 </script>
 
 <template>
-  <div
-    style="
-      background: #1f2124;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      border-radius: 5px;
-      margin: 20px 20px 20px 20px;
-      width: 250px;
-      padding: 20px;
-      text-align: center;
-      color: white;
-      float: left;
-    "
-    data-e2e="APP__CARD"
-  >
+  <div class="card" data-e2e="APP__CARD">
     <div className="icon">
       <img :src="image" alt="" />
     </div>
@@ -33,4 +20,16 @@ console.info("vite import.meta got message:", enviroment.VITE_EXAMPLE);
   </div>
 </template>
 
-<style scoped />
+<style scoped>
+.card {
+  background: #1f2124;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  margin: 20px 20px 20px 20px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  float: left;
+}
+</style>
