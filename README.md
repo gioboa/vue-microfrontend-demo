@@ -1,4 +1,4 @@
-# Vue host and remote
+# Vue3 host and Vue2 remote
 
 ## Getting started
 
