@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 import Counter from "./components/Counter.vue";
+// @ts-ignore
 import { vue2ToVue3 } from "./utils/vue2ToVue3";
 
 const RemoteMFE = defineAsyncComponent(async () => {
+  // @ts-ignore
   const remote = (await import("remote/remote-app")).default;
   return vue2ToVue3(remote, "remote");
 });

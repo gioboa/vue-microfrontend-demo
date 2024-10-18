@@ -41,7 +41,6 @@ export default defineConfig(async ({ command, mode }) => {
           __dirname,
           "./node_modules/vue/dist/vue.runtime.esm.js",
         ),
-        pinia: path.resolve(__dirname, "./node_modules/pinia/dist/pinia.mjs"),
         shared: path.resolve(__dirname, "../shared/shared"),
       },
     },
