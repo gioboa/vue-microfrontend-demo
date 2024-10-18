@@ -1,5 +1,6 @@
+const Vue2 = (await import("remote/vue2")).default;
+
 export const vue2ToVue3 = async (remoteComponent, wrapperId) => {
-  const Vue2 = (await import("remote/vue2")).default;
   const bindSlotContext = (target = {}, context) => {
     return Object.keys(target).map((key) => {
       const vnode = target[key];
