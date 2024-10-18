@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 import Counter from "./components/Counter.vue";
-const RemoteMFE = defineAsyncComponent(
-  // @ts-ignore
-  () => import("remote/remote-app"),
-);
+import { vue2ToVue3 } from "./utils/vue2ToVue3";
+
+const RemoteMFE = defineAsyncComponent(async () => {
+  const remote = (await import("remote/remote-app")).default;
+  return vue2ToVue3(remote, "remote");
+});
 </script>
 
 <template>
@@ -33,7 +35,9 @@ const RemoteMFE = defineAsyncComponent(
       <Counter />
     </div>
   </div>
-  <RemoteMFE v-if="!!RemoteMFE" />
+  <div id="remote">
+    <RemoteMFE v-if="!!RemoteMFE" />
+  </div>
 </template>
 
 <style scoped>

@@ -4,8 +4,7 @@
     "vite.config.*",
     "vitest.config.*",
     "cypress.config.*",
-    "playwright.config.*",
-    "module-federation/esBuildAdapter.ts"
+    "playwright.config.*"
   ],
   "compilerOptions": {
     "composite": true,

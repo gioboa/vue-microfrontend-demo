@@ -1,8 +1,13 @@
-<script setup lang="ts">
-import { storeToRefs } from "pinia";
-import { useStore } from "../stores/counter";
-const store = useStore();
-const { count } = storeToRefs(store);
+<script lang="ts">
+import { defineComponent } from "@vue/composition-api";
+
+export default defineComponent({
+  data: () => {
+    return {
+      count: 0,
+    };
+  },
+});
 </script>
 
 <template>
@@ -16,10 +21,8 @@ const { count } = storeToRefs(store);
       padding: 0.5rem 1rem 0.5rem 1rem;
       color: rgb(24, 24, 24);
     "
-    @click="store.increment"
+    @click="count++"
   >
     Remote counter: {{ count }}
   </button>
 </template>
-
-<style scoped />
