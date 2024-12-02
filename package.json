@@ -9,7 +9,8 @@
     "dev": "pnpm -r dev",
     "build": "pnpm -r build",
     "preview": "pnpm -r preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "link:mf/vite": "pnpm -r link:mf/vite"
   },
   "author": {
     "name": "Giorgio Boa",
